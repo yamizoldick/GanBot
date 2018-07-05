@@ -1,4 +1,5 @@
-﻿import org.telegram.telegrambots.api.methods.send.SendMessage;
+
+import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
@@ -15,8 +16,7 @@ public class RojoBot extends TelegramLongPollingBot {
     Connection conexion =null;
     Connection inserta=obtenConexion();
      boolean comprobante=true;
-    String sql="",
-            texto="";
+    String sql="",texto="";
 
     @Override
     public void onUpdateReceived(Update update) {
