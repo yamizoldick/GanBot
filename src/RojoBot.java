@@ -13,51 +13,49 @@ import java.util.regex.*;
 public class RojoBot extends TelegramLongPollingBot {
     Connection conexion =null;
     Connection inserta=obtenConexion();
-     boolean comprobante=true;
-    String sql="",
-            texto="";
 
     @Override
     public void onUpdateReceived(Update update) {
-      texto=update.getMessage().getText();
-      buscaPalabra(texto);
-
-      System.out.print(update.getMessage().getFrom().getFirstName()
-                       + " " + update.getMessage().getText()+"\n");
+        String sql="",
+                texto="";
+        System.out.print(update.getMessage().getFrom().getFirstName()
+                + " " + update.getMessage().getText()+"\n");
         //se manda el mensaje
-      SendMessage mandaMensaje = new SendMessage().setChatId(update.getMessage()
-                                                                  .getChatId());
-      if (comprobante==buscaPalabra(update.getMessage().getText())) {
-        mandaMensaje.setText("HOLA " + update.getMessage().getFrom().getFirstName()
-                                     +", lo atiende Rodrigo Rojo, ¿en que lo ayudamos?");
-      }
-      else {
-          if (update.getMessage().getText().equals("quien soy?") || update.getMessage()
-                                                     .getText().equals("Quien soy?")) {
-              mandaMensaje.setText("eres " + update.getMessage().getFrom().getFirstName());
+        texto=update.getMessage().getText();
+        SendMessage mandaMensaje = new SendMessage().setChatId(update.getMessage()
+                .getChatId());
+        int [] matrizPalabras =buscaPalabra1(update.getMessage().getText());
+        if (matrizPalabras[0]==1) {
+            mandaMensaje.setText("HOLA " + update.getMessage().getFrom().getFirstName()
+                    +", lo atiende Rodrigo Rojo, ¿en que lo ayudamos?");
+        }
+        else {
+            if (update.getMessage().getText().equals("quien soy?") || update.getMessage()
+                    .getText().equals("Quien soy?")) {
+                mandaMensaje.setText("eres " + update.getMessage().getFrom().getFirstName());
 
-          }
-          else {
-              mandaMensaje.setText("no logre entenderte amigo ");
+            }
+            else {
+                mandaMensaje.setText("no logre entenderte amigo ");
 
-              sql="insert into pruebadeincercion(texto)VALUES (?)";
-              try {
-                  PreparedStatement pst= inserta.prepareStatement(sql);
-                  pst.setString(1,texto);
-                  pst.executeUpdate();
-              }
-              catch (SQLException e) {
-                  e.printStackTrace();
-              }
-          }
-      }
-      try {
-          sendMessage(mandaMensaje);
-      }
-      catch (TelegramApiException e) {
-          e.printStackTrace();
-      }
-      }
+                sql="insert into pruebadeincercion(texto)VALUES (?)";
+                try {
+                    PreparedStatement pst= inserta.prepareStatement(sql);
+                    pst.setString(1,texto);
+                    pst.executeUpdate();
+                }
+                catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        try {
+            sendMessage(mandaMensaje);
+        }
+        catch (TelegramApiException e) {
+            e.printStackTrace();
+        }
+    }
 
     public String getBotUsername() {
 
@@ -78,7 +76,7 @@ public class RojoBot extends TelegramLongPollingBot {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             conexion=DriverManager.getConnection("jdbc:mysql://localhost/cinetop",
-                                                             "root","");
+                    "root","");
             System.out.print("conexión establecida");
         }
         catch (ClassNotFoundException | SQLException e)
@@ -87,25 +85,32 @@ public class RojoBot extends TelegramLongPollingBot {
         }
         return conexion;
     }
+    
+    public int[] buscaPalabra1 (String b){
+        String [] arregloDePalabras = {"hola","Cuál","cuales","pelicula","peliculas","Funcion"
+                                                                 ,"funciones","combo","combos"};//palabra buscada
+        String pajar = b,
+                  aguja="";    //texto
+        int [] numero=new int[9];
+        //escapar y agregar limites de palabra completa - case-insensitive
+        for (int X=0;X<=8;X++) {
+            aguja=arregloDePalabras[X];
+            Pattern regex = Pattern.compile("\\b" + Pattern.quote(aguja) + "\\b", Pattern.CASE_INSENSITIVE);
+            Matcher match = regex.matcher(pajar);
+            //la palabra está en el texto??
+            if (match.find()) {  //si se quiere encontrar todas las ocurrencias: cambiar el if por while
+                System.out.println("Encontrado: '" + match.group()
+                        + "' dentro de '" + pajar
+                        + "' en la posición " + match.start());
+                numero[X] = 1;
+            } else {
+                System.out.println("'" + aguja + "' NO está dentro de '" + pajar);
+                numero[X] = 0;
+            }
 
-    public Boolean buscaPalabra(String b){
-        String aguja = "hola";//palabra buscada
-        String pajar = b;    //texto
-        Boolean numero=false;
-         //escapar y agregar limites de palabra completa - case-insensitive
-        Pattern regex = Pattern.compile("\\b" + Pattern.quote(aguja) + "\\b", Pattern.CASE_INSENSITIVE);
-        Matcher match = regex.matcher(pajar);
 
-        //la palabra está en el texto??
-        if (match.find()) {  //si se quiere encontrar todas las ocurrencias: cambiar el if por while
-            System.out.println("Encontrado: '" + match.group()
-                    + "' dentro de '" + pajar
-                    + "' en la posición " + match.start());
-            numero =true;
-        } else {
-            System.out.println("'" + aguja + "' NO está dentro de '" + pajar);
-            numero=false;
         }
+        System.out.println(numero[0]+" "+numero[1]);
         return numero;
     }
 }

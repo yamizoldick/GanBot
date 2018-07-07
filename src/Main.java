@@ -7,10 +7,10 @@ public class Main {
     public static void main(String args[]) {
         ApiContextInitializer.init();
         TelegramBotsApi rojobot =new TelegramBotsApi();
-        RojoBot KarebBot= new RojoBot();
-        RojoBot conexion=new RojoBot();
+        RojoBot bot= new RojoBot();
+        //RojoBot conexion=new RojoBot();
         try {
-            rojobot.registerBot(KarebBot);
+            rojobot.registerBot(bot);
         }
         catch (TelegramApiRequestException e) {
             e.printStackTrace();
