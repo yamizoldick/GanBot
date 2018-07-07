@@ -1,3 +1,4 @@
+
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -5,14 +6,18 @@ import org.telegram.telegrambots.exceptions.TelegramApiException;
 import java.sql.*;
 import java.util.regex.*;
 
-/*Autor:Rodrigo Rojo Ugalde
+/*Autor:Rodrigo Rojo Ugalde, Richard Garcia
  *Fecha de ultima modificación: 03/07/2018
  *Proposito de la clase: Realizar la conexion con la aplicacion telegram
  * asi como el funcionamiento de el bot respondiendo a preguntas
  * */
+
 public class RojoBot extends TelegramLongPollingBot {
     Connection conexion =null;
     Connection inserta=obtenConexion();
+
+     boolean comprobante=true;
+    String sql="",texto="";
 
     @Override
     public void onUpdateReceived(Update update) {
