@@ -18,14 +18,13 @@
       <file leaf-file-name="RojoBot.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/RojoBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="71" column="17" lean-forward="true" selection-start-line="71" selection-start-column="17" selection-end-line="71" selection-end-column="17" />
+            <state relative-caret-position="355">
+              <caret line="160" column="1" lean-forward="true" selection-start-line="160" selection-start-column="1" selection-end-line="160" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getBotUsername#0;class#RojoBot#0" />
                 <element signature="method#getBotToken#0;class#RojoBot#0" />
                 <element signature="method#obtenConexion#0;class#RojoBot#0" />
-                <element signature="method#enviarImagen#0;class#RojoBot#0" />
               </folding>
             </state>
           </provider>
@@ -34,7 +33,7 @@
       <file leaf-file-name="Reos.java" pinned="false" current-in-tab="false">
         <entry file="file://D:/Descargas/Reos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="204">
               <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
               <folding>
                 <element signature="e#0#1811#0" expanded="true" />
@@ -122,6 +121,7 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -147,16 +147,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/mysql-connector-java-5.1.6-bin.jar!/" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
@@ -266,11 +262,12 @@
       <workItem from="1530811957268" duration="1069000" />
       <workItem from="1531291291268" duration="6286000" />
       <workItem from="1531298447422" duration="2968000" />
+      <workItem from="1531320716458" duration="1907000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47803000" />
+    <option name="totallyTimeSpent" value="49710000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -282,7 +279,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -371,7 +368,6 @@
             <element signature="method#getBotUsername#0;class#RojoBot#0" />
             <element signature="method#getBotToken#0;class#RojoBot#0" />
             <element signature="method#obtenConexion#0;class#RojoBot#0" />
-            <element signature="method#enviarImagen#0;class#RojoBot#0" />
           </folding>
         </state>
       </provider>
@@ -413,7 +409,6 @@
             <element signature="method#getBotUsername#0;class#RojoBot#0" />
             <element signature="method#getBotToken#0;class#RojoBot#0" />
             <element signature="method#obtenConexion#0;class#RojoBot#0" />
-            <element signature="method#enviarImagen#0;class#RojoBot#0" />
           </folding>
         </state>
       </provider>
@@ -457,7 +452,6 @@
             <element signature="method#getBotUsername#0;class#RojoBot#0" />
             <element signature="method#getBotToken#0;class#RojoBot#0" />
             <element signature="method#obtenConexion#0;class#RojoBot#0" />
-            <element signature="method#enviarImagen#0;class#RojoBot#0" />
           </folding>
         </state>
       </provider>
@@ -478,7 +472,6 @@
             <element signature="method#getBotUsername#0;class#RojoBot#0" />
             <element signature="method#getBotToken#0;class#RojoBot#0" />
             <element signature="method#obtenConexion#0;class#RojoBot#0" />
-            <element signature="method#enviarImagen#0;class#RojoBot#0" />
           </folding>
         </state>
       </provider>
@@ -499,7 +492,6 @@
             <element signature="method#getBotUsername#0;class#RojoBot#0" />
             <element signature="method#getBotToken#0;class#RojoBot#0" />
             <element signature="method#obtenConexion#0;class#RojoBot#0" />
-            <element signature="method#enviarImagen#0;class#RojoBot#0" />
           </folding>
         </state>
       </provider>
@@ -730,7 +722,7 @@
     </entry>
     <entry file="file://D:/Descargas/Reos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="204">
           <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
           <folding>
             <element signature="e#0#1811#0" expanded="true" />
@@ -747,14 +739,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RojoBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="71" column="17" lean-forward="true" selection-start-line="71" selection-start-column="17" selection-end-line="71" selection-end-column="17" />
+        <state relative-caret-position="355">
+          <caret line="160" column="1" lean-forward="true" selection-start-line="160" selection-start-column="1" selection-end-line="160" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getBotUsername#0;class#RojoBot#0" />
             <element signature="method#getBotToken#0;class#RojoBot#0" />
             <element signature="method#obtenConexion#0;class#RojoBot#0" />
-            <element signature="method#enviarImagen#0;class#RojoBot#0" />
           </folding>
         </state>
       </provider>

@@ -66,7 +66,7 @@ public class RojoBot extends TelegramLongPollingBot {
             try {
                 //Prueba del metodo, ELIMINAR EN VERSION FINAL
                 Statement query= inserta.createStatement();
-                 rs= query.executeQuery ("select imag_peli from pelicula where id_peli=1");
+                 rs= query.executeQuery ("select imag_peli from pelicula where id_peli=5");
                 while (rs.next())
                 {
                     //Prueba del metodo, ELIMINAR EN VERSION FINAL
